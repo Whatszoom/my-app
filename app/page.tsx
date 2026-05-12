@@ -7,7 +7,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-6">
-      <h1 className="text-2xl font-bold">Home Page</h1>
+      <h1 className="text-2xl font-bold">Mahadev Page Gydium</h1>
 
       <button
         onClick={() => router.push("/upload")}
