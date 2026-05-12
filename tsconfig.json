@@ -29,7 +29,12 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "lib/mongodb.js"
+    "lib/mongodb.js",
+    "models/Test.js",
+    "app/page.js",
+    "app/upload/page.js",
+    "app/api/test/route.js",
+    "app/api/test/upload-image/route.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,3 +1,4 @@
+// app/api/tests/route.js
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Test from "@/models/Test";
@@ -14,7 +15,7 @@ export async function GET() {
       count: data.length,
       data,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("❌ GET ERROR:", error);
 
     return NextResponse.json(
@@ -29,7 +30,7 @@ export async function GET() {
 }
 
 // ✅ CREATE NEW IMAGE ENTRY
-export async function POST(req: NextRequest) {
+export async function POST(req) {
   try {
     await connectDB();
 
@@ -56,7 +57,7 @@ export async function POST(req: NextRequest) {
       message: "Saved successfully",
       data: created,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("❌ POST ERROR:", error);
 
     return NextResponse.json(

@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 export default function UploadPage() {
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState(null);
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
-  const [images, setImages] = useState<any[]>([]);
+  const [images, setImages] = useState([]);
 
   // ✅ Fetch all images
   const fetchImages = async () => {

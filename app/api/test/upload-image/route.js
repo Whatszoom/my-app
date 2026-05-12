@@ -1,12 +1,12 @@
-// app/api/upload-image/route.ts
+// app/api/upload-image/route.js
 import { NextRequest, NextResponse } from "next/server";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import s3 from "@/lib/s3";
 
-export async function POST(req: NextRequest) {
+export async function POST(req) {
   try {
     const formData = await req.formData();
-    const file = formData.get("image") as File;
+    const file = formData.get("image");
 
     // ❌ No file
     if (!file) {
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
         ContentType: file.type,
 
         // 🔥 IMPORTANT → make file public
-        ACL: "public-read",
+        // ACL: "public-read",
       }),
     );
 
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
       success: true,
       url: fileUrl,
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error("❌ Upload Error:", err);
 
     return NextResponse.json(
